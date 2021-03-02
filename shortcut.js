@@ -1,16 +1,16 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
 // icon-color: deep-blue; icon-glyph: magic;
-const API_KEY = args.shortcutParameter
+
 // Getting data from Netlify
+const API_KEY = args.widgetParameter
 
 class NetlifyAPI {
   constructor(token) {
     this.token = token
   }
   getRequest() {
-    const request = new Request()
-    request.url = 'https://api.netlify.com/api/v1/'
+    const request = new Request('https://api.netlify.com/api/v1/')
     request.headers = {
       'User-Agent': 'Scriptable Netlify Widget',
       Authorization: `Bearer ${this.token}`,
